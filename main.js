@@ -1,21 +1,27 @@
-var r = 0;
-var b = 255;
+var pt = {
+    x: 300,
+    y: 50
+}
 
-var circle = {
-    y: 200,
-    diameter: 50
+var col = {
+    r: 255,
+    g: 0,
+    b: 0
 }
 
 function setup() {
     createCanvas(640, 360);
+    background(0);
 }
 
 function draw() {
-    r = map(mouseX, 0, 600, 0, 255);
-    b = map(mouseX, 0, 600, 255, 0);
-    background(r, 0, b);
-    fill(250, 200, 200);
-    ellipse(mouseX, circle.y, circle.diameter, circle.diameter);
+    col.r = random(100, 255);
+    col.g = 0;
+    col.b = random(100, 200);
 
-    circle.x = circle.x + 1;
+    pt.x = random(0, width);
+    pt.y = random(0, width);
+    fill(col.r, col.g, col.b, 100);
+    noStroke();
+    ellipse(pt.x, pt.y, 24, 24);
 }
