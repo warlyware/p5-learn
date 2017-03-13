@@ -10,7 +10,7 @@ var col = {
 }
 
 function setup() {
-    createCanvas(640, 360);
+    createCanvas(window.innerWidth, window.innerHeight);
     background(0);
 }
 
@@ -25,3 +25,8 @@ function draw() {
     noStroke();
     ellipse(pt.x, pt.y, 24, 24);
 }
+
+window.onresize = function() {
+    createCanvas(window.innerWidth, window.innerHeight);
+    background(0);
+};
